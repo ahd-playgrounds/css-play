@@ -1,8 +1,129 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --font-size: 1.3rem;
+  --font-mono: 'Roboto', sans-serif;
+  --font-accent: 'Lora', serif;
+  --font-main: 'Merriweather', serif;
+  --col-white: #fff;
+  --col-link: #c98feb;
+  --col-black: #262312;
+  --col-1: #025e73;
+  --col-2: #0388a6;
+  --col-3: #0378a6;
+  --col-pop: #52d9cb;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-main);
+  font-size: var(--font-size);
+  background-color: var(--col-1);
+  color: var(--col-white);
+}
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--font-accent);
+  font-size: 2rem;
+}
+a {
+  color: var(--col-link);
+  font-size: var(--font-size);
+}
+
+ul {
+  margin: 0;
+}
+
+/** NAVBAR */
+
+nav {
+  font-family: var(--font-mono);
+  padding: 1rem;
+}
+
+nav h1 a {
+  font-family: var(--font-accent);
+}
+
+nav li:first-child {
+  flex-basis: 100%;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#title {
+  color: initial;
+}
+nav a {
+  color: var(--col-white);
+  text-decoration: none;
+  display: block;
+}
+
+nav [class*='fa-'] {
+  font-size: 150%;
+}
+
+nav h1 [class*='fa-'] {
+  color: inherit;
+  font-size: 100%;
+}
+
+nav a:hover {
+  color: var(--col-pop);
+  text-decoration: underline;
+}
+
+@media (min-width: 850px) {
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  nav li:first-child {
+    flex-basis: auto;
+    text-align: left;
+    margin-right: auto;
+  }
+}
+
+/** card */
+.card {
+  color: red;
+  font-size: 80%;
+}
+
+.card h2 {
+  color: var(--col-white);
+}
+
+.card h3 {
+  color: var(--col-pop);
+}
+
+.card p {
+  background: var(--col-black);
+  color: var(--col-white);
 }
